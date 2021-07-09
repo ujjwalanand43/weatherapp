@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@1,200&family=Poppins:wght@200&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=KoHo:ital,wght@0,500;1,300&display=swap" rel="stylesheet">
+    <!-- <link rel="stylesheet" href="css/style.css"> -->
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            /* font-family: 'Nunito Sans', sans-serif; */
+            /* font-family: 'Poppins', sans-serif; */
+            font-family: 'KoHo', sans-serif;
+        }
+        
+        body {
+            /* background-image: url("https://images.unsplash.com/photo-1523712999610-f77fbcfc3843?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1850&q=80"); */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            flex-direction: column;
+        }
+        
+        .box {
+            background-color: #59D7D5;
+            height: 80vh;
+            width: 80%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            box-shadow: 0 3.3px 3.1px -20px rgba(0, 0, 0, 0.034), 0 7.8px 7.5px -20px rgba(0, 0, 0, 0.048), 0 14.8px 14.1px -20px rgba(0, 0, 0, 0.06), 0 26.4px 25.2px -20px rgba(0, 0, 0, 0.072), 0 49.3px 47.2px -20px rgba(0, 0, 0, 0.086), 0 118px 113px -20px rgba(0, 0, 0, 0.12);
+            border-radius: 5px;
+        }
+        
+        .box img {
+            background-color: transparent;
+            width: 100px;
+            /* box-shadow:  0px 16px 24px 2px rgba(0,0,0,0.14) , 0px 6px 30px 5px rgba(0,0,0,0.12) , 0px 8px 10px -7px rgba(0,0,0,0.2)  */
+        }
+        
+        .card {
+            background: rgb(109, 250, 229);
+            position: relative;
+            box-shadow: 0 2.9px 3px rgba(0, 0, 0, 0.045), 0 6.9px 7.1px rgba(0, 0, 0, 0.065), 0 13px 13.4px rgba(0, 0, 0, 0.08), 0 23.2px 23.9px rgba(0, 0, 0, 0.095), 0 43.4px 44.7px rgba(0, 0, 0, 0.115), 0 104px 107px rgba(0, 0, 0, 0.16);
+            border-radius: 30px;
+            height: 580px;
+            width: 260px;
+            /* #72EFED */
+        }
+        
+        #sun {
+            background-color: url('sun.png');
+            position: absolute;
+            top: 60px;
+            left: 40px;
+            width: 167px;
+        }
+        /* .cloud{
+  background:transparent;
+ 
+} */
+        
+        #one {
+            /* background-color: black; */
+            position: absolute;
+            left: -85px;
+            top: 59px;
+        }
+        
+        #two {
+            /* background-color: black; */
+            position: relative;
+            left: 190px;
+            top: 157px;
+        }
+        
+        #three {
+            position: absolute;
+            top: 200px;
+            right: 230px;
+        }
+        
+        .timezone {
+            /* position: absolute;
+  bottom: 70px; */
+            /* left: 500px; */
+            font-size: 30px;
+            margin-top: 270px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            color: #02475e;
+        }
+        
+        #name {
+            font-size: 30px;
+        }
+        
+        .top {
+            display: flex;
+            position: absolute;
+            left: 35px;
+            top: 55px;
+        }
+        
+        .top h1 {
+            font-size: 20px;
+            margin-left: 20px;
+            /* font-family: 'Poppins', sans-serif */
+        }
+        
+        .top img {
+            margin-left: -10px;
+            width: 22px;
+        }
+        
+        .temp {
+            position: absolute;
+            top: 300px;
+            text-align: center;
+            width: 100%;
+        }
+        
+        .temp h1 {
+            font-size: 70px;
+            margin-top: -79px;
+            font-weight: 500;
+            color: whitesmoke;
+        }
+    </style>
+    <title>weather app</title>
+</head>
+
+<body>
+    <div class="box">
+        <div class="card">
+            <!-- <img src="https://image.flaticon.com/icons/png/512/890/890347.png" alt="sun" id="sun"> -->
+            <img src="https://www.accuweather.com/images/weathericons/05.svg" alt="sun" id="sun">
+            <!-- <img src={%img%} alt="sun" id="sun"> -->
+            <!-- <i class="fas fa-sun"></i> -->
+            <div class="temp">
+                <h1>{%temp%}&deg;c</h1>
+                <h3>{%condition%}</h3>
+                <!-- <h3>Min  {%mintemp%}&deg;c| Max  {%maxtemp%}&deg;c</h3> -->
+
+            </div>
+            <div class="top">
+                <img src="https://image.flaticon.com/icons/png/128/2991/2991231.png" alt="">
+                <h1 id="h1">{%location%}, {%country%}</h1>
+                <i class="fa fa-calendar" style="color:black;margin-left: 60px;margin-top: 7px;"></i>
+            </div>
+            <div class="icons">
+                <img src="https://image.flaticon.com/icons/png/512/616/616516.png" alt="" id="one" class="cloud">
+                <img src="https://image.flaticon.com/icons/png/512/616/616516.png" alt="" id="two" class="cloud">
+                <img src="https://image.flaticon.com/icons/png/512/616/616516.png" alt="" id="three" class="cloud">
+                <!-- <i class="fa fa-sun-o" style="color:yellow;"></i> -->
+            </div>
+
+            <div class="timezone">
+                <p id="time">12:00pm||wed</p>
+                <div id="year"></div>
+                <p id="time-wish">Good Afternoon,</p>
+
+                <p id="name" style="font-size:30px"> Ujjwal </p>
+            </div>
+        </div>
+
+    </div>
+
+
+
+    <script>
+        let date = new Date()
+        let hour = date.getHours()
+        let minute = date.getMinutes()
+
+
+
+        var showTime = () => {
+            let timeZone = document.getElementById("time")
+            let yearShow = document.getElementById('year')
+
+            let date = new Date()
+            let hour = date.getHours()
+            let minute = date.getMinutes()
+            let sec = date.getSeconds();
+            let year = date.getFullYear()
+            console.log(year)
+                // let day = date.getDay();
+            var weekday = new Array(7);
+            weekday[0] = "Sunday";
+            weekday[1] = "Monday";
+            weekday[2] = "Tuesday";
+            weekday[3] = "Wednesday";
+            weekday[4] = "Thursday";
+            weekday[5] = "Fri";
+            weekday[6] = "Saturday";
+
+            var n = weekday[date.getDay()];
+            var time = timeZone.innerHTML = `${hour}:${zero(minute)}:${zero(sec)}||${n}`;
+            let yearfinal = yearShow.innerText = year
+            setTimeout(showTime, 1000);
+        }
+        if (hour < 12) {
+
+            document.getElementById("time-wish").innerText = "Good Morning,"
+        } else if (hour < 17) {
+
+            document.getElementById("time-wish").innerText = "Good Afternoon,"
+        } else {
+
+            document.getElementById("time-wish").innerText = "Good Evening,"
+        }
+
+        // let timeWish = document.getElementById("time-wish")
+        // if(hour>12){
+        //     timeWish.innerHTML = 'Good Afternoon'
+        // }
+        // function to  add zero  when below 10
+        function zero(n) {
+            return (parseInt(n, 10) < 10 ? "0" : "") + n
+        }
+        showTime()
+    </script>
+</body>
+
+</html>
